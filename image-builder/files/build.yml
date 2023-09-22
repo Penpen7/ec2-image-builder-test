@@ -1,0 +1,19 @@
+name: install_sl
+description: install sl
+schemaVersion: 1.0
+phases:
+  - name: build
+    steps:
+      - name: install_sl
+        action: ExecuteBash
+        inputs:
+          commands:
+            - sudo apt update
+            - sudo apt install sl
+  - name: test
+    steps:
+      - name: run_sl
+        action: ExecuteBash
+        inputs:
+          commands:
+            - which sl
